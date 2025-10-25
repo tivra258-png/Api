@@ -14,13 +14,10 @@ module.exports = async (req, res) => {
   }
 
   res.status(200).json({
-    message: 'Cricket API is running!',
-    endpoints: {
-      matches: '/api/matches',
-      matchDetails: '/api/match/:eventId',
-      health: '/api/health'
-    },
-    domain: 'api-chi-rouge-91.vercel.app',
-    timestamp: new Date().toISOString()
+    status: 'OK',
+    message: 'Cricket API is healthy',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    domain: 'api-chi-rouge-91.vercel.app'
   });
 };
